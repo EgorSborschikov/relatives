@@ -1,0 +1,1 @@
+export 'package:relatives/common/widgets/language_picker/view/view.dart';

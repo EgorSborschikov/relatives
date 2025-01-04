@@ -1,0 +1,17 @@
+{
+    "home": "Главная",
+    "add": "Добавить",
+    "addContact": "Добавить контакт",
+    "settings": "Настройки",
+    "darkTheme": "Темная тема",
+    "lastName": "Фамилия",
+    "firstName": "Имя",
+    "middleName": "Отчество",
+    "birthDate": "Дата рождения",
+    "phoneNumber": "Номер телефона",
+    "country": "Страна",
+    "region": "Область",
+    "city": "Город",
+    "selectLanguage": "Выбрать язык",
+    "deleteAll": "Удалить все"
+}  

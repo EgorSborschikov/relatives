@@ -1,0 +1,17 @@
+{
+    "home": "Home",
+    "add": "Add",
+    "addContact": "Add Contact",
+    "settings": "Settings",
+    "darkTheme": "Dark Theme",
+    "lastName": "Last Name",
+    "firstName": "First Name",
+    "middleName": "Middle Name",
+    "birthDate": "Date of Birth",
+    "phoneNumber": "Phone Number",
+    "country": "Country",
+    "region": "Region",
+    "city": "City",
+    "selectLanguage": "Select Language",
+    "deleteAll": "Delete All"
+}  

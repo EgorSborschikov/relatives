@@ -1,4 +1,5 @@
 import 'package:flutter/cupertino.dart';
+import 'package:flutter/material.dart';
 
 class SettingsItem extends StatelessWidget {
   final String title;
@@ -16,7 +17,7 @@ class SettingsItem extends StatelessWidget {
       margin: const EdgeInsets.symmetric(vertical: 8.0, horizontal: 16.0),
       padding: const EdgeInsets.all(16.0),
       decoration: BoxDecoration(
-        color: CupertinoColors.white,
+        color: CupertinoTheme.of(context).primaryContrastingColor,
         borderRadius: BorderRadius.circular(12.0),
         boxShadow: [
           BoxShadow(
@@ -31,10 +32,7 @@ class SettingsItem extends StatelessWidget {
         children: [
           Text(
             title,
-            style: TextStyle(
-              fontSize: 16.0,
-              color: CupertinoColors.black,
-            ),
+            style: CupertinoTheme.of(context).textTheme.textStyle,
           ),
           trailingWidget,
         ],

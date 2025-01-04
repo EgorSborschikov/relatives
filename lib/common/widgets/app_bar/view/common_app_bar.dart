@@ -9,17 +9,21 @@ class CommonAppBar extends StatelessWidget implements ObstructingPreferredSizeWi
   @override
   Widget build(BuildContext context) {
     return CupertinoNavigationBar(
-      middle: Text(title),
+      backgroundColor: CupertinoTheme.of(context).barBackgroundColor,
+      middle: Text(
+        title,
+        style: CupertinoTheme.of(context).textTheme.textStyle,
+      ),
       leading: CupertinoButton(
         padding: EdgeInsets.zero,
-        child: Icon(CupertinoIcons.back, color: CupertinoColors.white),
+        child: Icon(CupertinoIcons.back, color: CupertinoTheme.of(context).primaryColor),
         onPressed: () {
           // Действие при нажатии на кнопку "Назад"
         },
       ),
       trailing: CupertinoButton(
         padding: EdgeInsets.zero,
-        child: Icon(CupertinoIcons.bell, color: CupertinoColors.white),
+        child: Icon(CupertinoIcons.bell, color: CupertinoTheme.of(context).primaryColor),
         onPressed: () {
           // Действие при нажатии на кнопку "Уведомления"
         },

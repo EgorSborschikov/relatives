@@ -1,19 +1,23 @@
 import 'package:flutter/cupertino.dart';
 
-//const widgets_primary_color = CupertinoColors.white;
-
 final CupertinoThemeData lightTheme = CupertinoThemeData(
   primaryColor: CupertinoColors.activeBlue,
+  primaryContrastingColor: const Color.fromARGB(255, 216, 216, 216),
   barBackgroundColor: CupertinoColors.white,
   textTheme: CupertinoTextThemeData(
-    primaryColor: CupertinoColors.black,
+    textStyle: TextStyle(
+      color: CupertinoColors.black,
+    )
   ),
 );
 
 final CupertinoThemeData darkTheme = CupertinoThemeData(
   primaryColor: CupertinoColors.activeOrange,
+  primaryContrastingColor: const Color.fromARGB(255, 54, 54, 54),
   barBackgroundColor: CupertinoColors.black,
   textTheme: CupertinoTextThemeData(
-    primaryColor: CupertinoColors.white,
+    textStyle: TextStyle(
+      color:CupertinoColors.white,
+    ),
   ),
 );

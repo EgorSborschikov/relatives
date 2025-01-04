@@ -1,12 +1,10 @@
 import 'package:flutter/cupertino.dart';
-
-import '../../../../features/add_contacts/view/add_contacts_page.dart';
-import '../../../../features/home/view/home_page.dart';
-import '../../../../features/settings/view/settings_page.dart';
+import 'package:flutter/material.dart';
+import 'package:relatives/features/add_contacts/view/add_contacts_page.dart';
+import 'package:relatives/features/home/view/home_page.dart';
+import 'package:relatives/features/settings/view/settings_page.dart';
 
 class RelativeListTabBar extends StatelessWidget {
-  const RelativeListTabBar({super.key});
-
   @override
   Widget build(BuildContext context) {
     return CupertinoTabScaffold(
@@ -17,7 +15,7 @@ class RelativeListTabBar extends StatelessWidget {
             label: 'Главная',
           ),
           BottomNavigationBarItem(
-            icon: Icon(CupertinoIcons.add),
+            icon: Icon(CupertinoIcons.add_circled),
             label: 'Добавить',
           ),
           BottomNavigationBarItem(
@@ -27,16 +25,20 @@ class RelativeListTabBar extends StatelessWidget {
         ],
       ),
       tabBuilder: (BuildContext context, int index) {
-        switch (index) {
-          case 0:
-            return HomePage();
-          case 1:
-            return AddContactsPage();
-          case 2:
-            return SettingsPage();
-          default:
-            return HomePage();
-        }
+        return CupertinoTabView(
+          builder: (BuildContext context) {
+            switch (index) {
+              case 0:
+                return HomePage();
+              case 1:
+                return AddContactsPage();
+              case 2:
+                return SettingsPage();
+              default:
+                return HomePage();
+            }
+          },
+        );
       },
     );
   }

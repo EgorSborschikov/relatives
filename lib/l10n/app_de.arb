@@ -1,0 +1,17 @@
+{
+    "home": "Startseite",
+    "add": "Hinzufügen",
+    "addContact": "Kontakt hinzufügen",
+    "settings": "Einstellungen",
+    "darkTheme": "Dunkles Thema",
+    "lastName": "Nachname",
+    "firstName": "Vorname",
+    "middleName": "Zweiter Vorname",
+    "birthDate": "Geburtsdatum",
+    "phoneNumber": "Telefonnummer",
+    "country": "Land",
+    "region": "Region",
+    "city": "Stadt",
+    "selectLanguage": "Sprache auswählen",
+    "deleteAll": "Alles löschen"
+}  
