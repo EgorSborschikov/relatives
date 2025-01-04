@@ -1,0 +1,1 @@
+export 'package:relatives/common/widgets/bottom_navigation_bar/view/bottom_tab_bar.dart';

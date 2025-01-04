@@ -1,0 +1,1 @@
+export 'package:relatives/common/widgets/app_bar/view/view.dart';
