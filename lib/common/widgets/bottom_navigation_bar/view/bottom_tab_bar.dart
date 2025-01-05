@@ -1,26 +1,28 @@
 import 'package:flutter/cupertino.dart';
-import 'package:flutter/material.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:relatives/features/add_contacts/view/add_contacts_page.dart';
 import 'package:relatives/features/home/view/home_page.dart';
 import 'package:relatives/features/settings/view/settings_page.dart';
 
 class RelativeListTabBar extends StatelessWidget {
+  const RelativeListTabBar({super.key});
+
   @override
   Widget build(BuildContext context) {
     return CupertinoTabScaffold(
       tabBar: CupertinoTabBar(
-        items: const <BottomNavigationBarItem>[
+        items: <BottomNavigationBarItem>[
           BottomNavigationBarItem(
-            icon: Icon(CupertinoIcons.home),
-            label: 'Главная',
+            icon: const Icon(CupertinoIcons.home),
+            label: AppLocalizations.of(context)!.home,
           ),
           BottomNavigationBarItem(
-            icon: Icon(CupertinoIcons.add_circled),
-            label: 'Добавить',
+            icon: const Icon(CupertinoIcons.add_circled),
+            label: AppLocalizations.of(context)!.add,
           ),
           BottomNavigationBarItem(
-            icon: Icon(CupertinoIcons.settings),
-            label: 'Настройки',
+            icon: const Icon(CupertinoIcons.settings),
+            label: AppLocalizations.of(context)!.settings,
           ),
         ],
       ),

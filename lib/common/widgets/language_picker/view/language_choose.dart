@@ -41,9 +41,18 @@ class LanguageChoose extends StatelessWidget {
           }
         },
         children: [
-          Text('English'),
-          Text('Русский'),
-          Text('Deutsch'),
+          Text(
+            'English',
+            style: CupertinoTheme.of(context).textTheme.textStyle,
+          ),
+          Text(
+            'Русский',
+            style: CupertinoTheme.of(context).textTheme.textStyle,
+          ),
+          Text(
+            'Deutsch',
+            style: CupertinoTheme.of(context).textTheme.textStyle,
+          ),
         ],
       ),
     );
