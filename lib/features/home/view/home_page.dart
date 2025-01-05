@@ -13,7 +13,7 @@ class HomePage extends StatelessWidget{
         title: AppLocalizations.of(context)!.home,
       ),
       child: Center(
-
+        
       )
     );
   }
