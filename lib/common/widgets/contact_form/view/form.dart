@@ -1,5 +1,3 @@
-//обновить теекстовые элементы
-
 import 'package:flutter/cupertino.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
@@ -25,7 +23,7 @@ class _ContactFormState extends State<ContactForm> {
   final _cityController = TextEditingController();
 
   void _addContact() {
-    if (_formKey.currentState!.validate()) {
+    if (_formKey.currentState != null && _formKey.currentState!.validate()) {
       Map<String, dynamic> contactData = {
         'lastName': _lastNameController.text,
         'firstName': _firstNameController.text,
@@ -37,10 +35,17 @@ class _ContactFormState extends State<ContactForm> {
         'city': _cityController.text,
       };
 
-      widget.onAddContact(contactData);
-      _clearFields();
+      if (widget.onAddContact != null) {
+        widget.onAddContact(contactData);
+        _clearFields();
+      } else {
+        debugPrint('onAddContact callback is null');
+      }
+    } else {
+      debugPrint('Form validation failed or form key is null');
     }
   }
+
 
   void _clearFields() {
     _lastNameController.clear();
@@ -55,124 +60,168 @@ class _ContactFormState extends State<ContactForm> {
 
   @override
   Widget build(BuildContext context) {
-    return CupertinoFormSection(
-      header: Text('Contact Information'),
-      children: <Widget>[
-        CupertinoFormRow(
-          prefix: Text(AppLocalizations.of(context)!.lastName),
-          child: CupertinoTextFormFieldRow(
-            controller: _lastNameController,
-            placeholder: 'Enter last name',
-            validator: (value) {
-              if (value == null || value.isEmpty) {
-                return 'Please enter last name';
-              }
-              return null;
-            },
+    final mediaQuery = MediaQuery.of(context);
+    final theme = CupertinoTheme.of(context);
+
+    return Padding(
+      padding: EdgeInsets.all(mediaQuery.size.width * 0.05),
+      child: CupertinoFormSection(
+        header: Text(
+          AppLocalizations.of(context)!.contactInformation,
+          style: theme.textTheme.textStyle.copyWith(
+            fontSize: 20,
+            fontWeight: FontWeight.bold
           ),
         ),
-        CupertinoFormRow(
-          prefix: Text(AppLocalizations.of(context)!.firstName),
-          child: CupertinoTextFormFieldRow(
-            controller: _firstNameController,
-            placeholder: 'Enter first name',
-            validator: (value) {
-              if (value == null || value.isEmpty) {
-                return 'Please enter first name';
-              }
-              return null;
-            },
-          ),
+        backgroundColor: theme.barBackgroundColor,
+        decoration: BoxDecoration(
+          color: theme.barBackgroundColor,
+          borderRadius: BorderRadius.circular(8.0),
         ),
-        CupertinoFormRow(
-          prefix: Text(AppLocalizations.of(context)!.middleName),
-          child: CupertinoTextFormFieldRow(
-            controller: _middleNameController,
-            placeholder: 'Enter middle name',
-            validator: (value) {
-              if (value == null || value.isEmpty) {
-                return 'Please enter middle name';
-              }
-              return null;
-            },
+        children: <Widget>[
+          CupertinoFormRow(
+            prefix: Text(
+              AppLocalizations.of(context)!.lastName,
+              style: theme.textTheme.textStyle,
+            ),
+            child: CupertinoTextFormFieldRow(
+              controller: _lastNameController,
+              placeholder: AppLocalizations.of(context)!.enterLastName,
+              validator: (value) {
+                if (value == null || value.isEmpty) {
+                  return AppLocalizations.of(context)!.pleaseEnterLastName;
+                }
+                return null;
+              },
+            ),
           ),
-        ),
-        CupertinoFormRow(
-          prefix: Text(AppLocalizations.of(context)!.birthDate),
-          child: CupertinoTextFormFieldRow(
-            controller: _birthDateController,
-            placeholder: 'Enter birth date',
-            validator: (value) {
-              if (value == null || value.isEmpty) {
-                return 'Please enter birth date';
-              }
-              return null;
-            },
+          CupertinoFormRow(
+            prefix: Text(
+              AppLocalizations.of(context)!.firstName,
+              style: theme.textTheme.textStyle,
+            ),
+            child: CupertinoTextFormFieldRow(
+              controller: _firstNameController,
+              placeholder: AppLocalizations.of(context)!.enterFirstName,
+              validator: (value) {
+                if (value == null || value.isEmpty) {
+                  return AppLocalizations.of(context)!.pleaseEnterFirstName;
+                }
+                return null;
+              },
+            ),
           ),
-        ),
-        CupertinoFormRow(
-          prefix: Text(AppLocalizations.of(context)!.phoneNumber),
-          child: CupertinoTextFormFieldRow(
-            controller: _phoneNumberController,
-            placeholder: 'Enter phone number',
-            validator: (value) {
-              if (value == null || value.isEmpty) {
-                return 'Please enter phone number';
-              }
-              return null;
-            },
+          CupertinoFormRow(
+            prefix: Text(
+              AppLocalizations.of(context)!.middleName,
+              style: theme.textTheme.textStyle,
+            ),
+            child: CupertinoTextFormFieldRow(
+              controller: _middleNameController,
+              placeholder: AppLocalizations.of(context)!.enterMiddleName,
+              validator: (value) {
+                if (value == null || value.isEmpty) {
+                  return AppLocalizations.of(context)!.pleaseEnterMiddleName;
+                }
+                return null;
+              },
+            ),
           ),
-        ),
-        CupertinoFormRow(
-          prefix: Text(AppLocalizations.of(context)!.country),
-          child: CupertinoTextFormFieldRow(
-            controller: _countryController,
-            placeholder: 'Enter country',
-            validator: (value) {
-              if (value == null || value.isEmpty) {
-                return 'Please enter country';
-              }
-              return null;
-            },
+          CupertinoFormRow(
+            prefix: Text(
+              AppLocalizations.of(context)!.birthDate,
+              style: theme.textTheme.textStyle,
+            ),
+            child: CupertinoTextFormFieldRow(
+              controller: _birthDateController,
+              placeholder: AppLocalizations.of(context)!.enterBirthDate,
+              validator: (value) {
+                if (value == null || value.isEmpty) {
+                  return AppLocalizations.of(context)!.pleaseEnterBirthDate;
+                }
+                return null;
+              },
+            ),
           ),
-        ),
-        CupertinoFormRow(
-          prefix: Text(AppLocalizations.of(context)!.region),
-          child: CupertinoTextFormFieldRow(
-            controller: _regionController,
-            placeholder: 'Enter region',
-            validator: (value) {
-              if (value == null || value.isEmpty) {
-                return 'Please enter region';
-              }
-              return null;
-            },
+          CupertinoFormRow(
+            prefix: Text(
+              AppLocalizations.of(context)!.phoneNumber,
+              style: theme.textTheme.textStyle,
+            ),
+            child: CupertinoTextFormFieldRow(
+              controller: _phoneNumberController,
+              placeholder: AppLocalizations.of(context)!.enterPhoneNumber,
+              validator: (value) {
+                if (value == null || value.isEmpty) {
+                  return AppLocalizations.of(context)!.pleaseEnterPhoneNumber;
+                }
+                return null;
+              },
+            ),
           ),
-        ),
-        CupertinoFormRow(
-          prefix: Text(AppLocalizations.of(context)!.city),
-          child: CupertinoTextFormFieldRow(
-            controller: _cityController,
-            placeholder: 'Enter city',
-            validator: (value) {
-              if (value == null || value.isEmpty) {
-                return 'Please enter city';
-              }
-              return null;
-            },
+          CupertinoFormRow(
+            prefix: Text(
+              AppLocalizations.of(context)!.country,
+              style: theme.textTheme.textStyle,
+            ),
+            child: CupertinoTextFormFieldRow(
+              controller: _countryController,
+              placeholder: AppLocalizations.of(context)!.enterCountry,
+              validator: (value) {
+                if (value == null || value.isEmpty) {
+                  return AppLocalizations.of(context)!.pleaseEnterCountry;
+                }
+                return null;
+              },
+            ),
           ),
-        ),
-        SizedBox(height: 20),
-        CupertinoButton(
-          onPressed: _addContact,
-          child:  Text(AppLocalizations.of(context)!.addContact),
-        ),
-        if (widget.isLoading)
-          Padding(
-            padding: const EdgeInsets.only(top: 20.0),
-            child: CupertinoActivityIndicator(),
+          CupertinoFormRow(
+            prefix: Text(
+              AppLocalizations.of(context)!.region,
+              style: theme.textTheme.textStyle,
+            ),
+            child: CupertinoTextFormFieldRow(
+              controller: _regionController,
+              placeholder: AppLocalizations.of(context)!.enterRegion,
+              validator: (value) {
+                if (value == null || value.isEmpty) {
+                  return AppLocalizations.of(context)!.pleaseEnterRegion;
+                }
+                return null;
+              },
+            ),
           ),
-      ],
+          CupertinoFormRow(
+            prefix: Text(
+              AppLocalizations.of(context)!.city,
+              style: theme.textTheme.textStyle,
+            ),
+            child: CupertinoTextFormFieldRow(
+              controller: _cityController,
+              placeholder: AppLocalizations.of(context)!.enterCity,
+              validator: (value) {
+                if (value == null || value.isEmpty) {
+                  return AppLocalizations.of(context)!.pleaseEnterCity;
+                }
+                return null;
+              },
+            ),
+          ),
+          SizedBox(height: mediaQuery.size.height * 0.02),
+          CupertinoButton(
+            onPressed: _addContact,
+            child: Text(
+              AppLocalizations.of(context)!.addContact,
+              style: TextStyle(color: theme.primaryColor),
+            ),
+          ),
+          if (widget.isLoading)
+            Padding(
+              padding: const EdgeInsets.only(top: 20.0),
+              child: CupertinoActivityIndicator(),
+            ),
+        ],
+      ),
     );
   }
 }

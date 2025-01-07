@@ -4,7 +4,7 @@ import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import '../../../common/widgets/contact_form/contact_form.dart';
 import '../../../services/contacts_manager_services/contacts_manager.dart';
 
-class AddContactsPage extends StatefulWidget{
+class AddContactsPage extends StatefulWidget {
   const AddContactsPage({super.key});
 
   @override
@@ -24,8 +24,8 @@ class _AddContactsPageState extends State<AddContactsPage> {
 
     setState(() {
       _isLoading = false;
-  });
-}
+    });
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -36,9 +36,11 @@ class _AddContactsPageState extends State<AddContactsPage> {
       ),
       child: Padding(
         padding: const EdgeInsets.all(16.0),
-        child: ContactForm(
-          onAddContact: _addContact,
-          isLoading: _isLoading,
+        child: SingleChildScrollView(
+          child: ContactForm(
+            onAddContact: _addContact,
+            isLoading: _isLoading,
+          ),
         ),
       ),
     );
