@@ -34,35 +34,3 @@ class Contact {
     };
   }
 }
-
-/*void addContactToFirestore(Contact contact) {
-  FirebaseFirestore.instance.collection('contacts').add(contact.toMap());
-}*/
-
-/*
-//отображение контактов
-StreamBuilder<QuerySnapshot>(
-  stream: FirebaseFirestore.instance.collection('contacts').snapshots(),
-  builder: (context, snapshot) {
-    if (snapshot.connectionState == ConnectionState.waiting) {
-      return CircularProgressIndicator();
-    }
-    if (snapshot.hasError) {
-      return Text('Error: ${snapshot.error}');
-    }
-    if (!snapshot.hasData || snapshot.data!.docs.isEmpty) {
-      return Text('No contacts available');
-    }
-
-    return ListView(
-      children: snapshot.data!.docs.map((document) {
-        Map<String, dynamic> data = document.data() as Map<String, dynamic>;
-        return ListTile(
-          title: Text('${data['lastName']} ${data['firstName']} ${data['middleName']}'),
-          subtitle: Text(data['phoneNumber']),
-        );
-      }).toList(),
-    );
-  },
-)
-*/

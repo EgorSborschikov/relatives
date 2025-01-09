@@ -1,8 +1,10 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
-import 'package:relatives/features/add_contacts/view/add_contacts_page.dart';
-import 'package:relatives/features/home/view/home_page.dart';
-import 'package:relatives/features/settings/view/settings_page.dart';
+
+import '../../../../features/add_contacts/add_contacts.dart';
+import '../../../../features/home/home.dart';
+import '../../../../features/settings/settings.dart';
+
 
 class RelativeListTabBar extends StatelessWidget {
   const RelativeListTabBar({super.key});

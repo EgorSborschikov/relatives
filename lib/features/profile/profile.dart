@@ -1,0 +1,1 @@
+export 'package:relatives/features/profile/view/view.dart';

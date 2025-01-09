@@ -2,6 +2,8 @@ import 'package:flutter/cupertino.dart';
 import 'package:relatives/common/widgets/app_bar/app_bar.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
+import 'contacts_list_page/contact_list_page.dart';
+
 class HomePage extends StatelessWidget{
   const HomePage({super.key});
   
@@ -12,9 +14,7 @@ class HomePage extends StatelessWidget{
       navigationBar: CommonAppBar(
         title: AppLocalizations.of(context)!.home,
       ),
-      child: Center(
-        
-      )
+      child: ContactListPage(),
     );
   }
 }

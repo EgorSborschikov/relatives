@@ -29,5 +29,17 @@
     "pleaseEnterPhoneNumber": "Пожалуйста, введите номер телефона",
     "pleaseEnterCountry": "Пожалуйста, введите страну",
     "pleaseEnterRegion": "Пожалуйста, введите регион",
-    "pleaseEnterCity": "Пожалуйста, введите город"
+    "pleaseEnterCity": "Пожалуйста, введите город",
+    "error":"Ошибка",
+    "filePathSelectionRequired":"Требуется выбор пути к файлу",
+    "ok":"Ok",
+    "contactAddedSuccessfully":"Контакты успешно добавлены",
+    "success":"Успешно",
+    "contactDetails":"Контактная информация",
+    "personalInformation":"Личные данные",
+    "locationInformation":"Проживание",
+    "additionalInformation":"Прочее",
+    "errorLoadingContacts":"Ошибка загрузки контактов",
+    "noContactsAvailable":"Нет доступных контактов",
+    "myContacts":"Мои контакты"
 }

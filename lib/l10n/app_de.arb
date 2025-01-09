@@ -29,5 +29,17 @@
     "pleaseEnterPhoneNumber": "Bitte Telefonnummer eingeben",
     "pleaseEnterCountry": "Bitte Land eingeben",
     "pleaseEnterRegion": "Bitte Region eingeben",
-    "pleaseEnterCity": "Bitte Stadt eingeben"
+    "pleaseEnterCity": "Bitte Stadt eingeben",
+    "error":"die Fehler",
+    "filePathSelectionRequired":"Dateipfadauswahl erforderlich",
+    "ok":"Ok",
+    "contactAddedSuccessfully":"Kontakt erfolgreich hinzugefügt",
+    "success":"Erfolg",
+    "contactDetails":"Kontaktinformationen",
+    "personalInformation":"Persönliche Informationen",
+    "locationInformation":"Persönliche Informationen",
+    "additionalInformation":"Andere",
+    "errorLoadingContacts":"Fehler beim Laden der Kontakte",
+    "noContactsAvailable":"Aber Kontakt Verfügbar",
+    "myContacts":"Meine Kontakte"
 }  

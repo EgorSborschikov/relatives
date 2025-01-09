@@ -12,21 +12,10 @@ class CommonAppBar extends StatelessWidget implements ObstructingPreferredSizeWi
       backgroundColor: CupertinoTheme.of(context).barBackgroundColor,
       middle: Text(
         title,
-        style: CupertinoTheme.of(context).textTheme.textStyle,
-      ),
-      leading: CupertinoButton(
-        padding: EdgeInsets.zero,
-        child: Icon(CupertinoIcons.back, color: CupertinoTheme.of(context).primaryColor),
-        onPressed: () {
-          // Действие при нажатии на кнопку "Назад"
-        },
-      ),
-      trailing: CupertinoButton(
-        padding: EdgeInsets.zero,
-        child: Icon(CupertinoIcons.bell, color: CupertinoTheme.of(context).primaryColor),
-        onPressed: () {
-          // Действие при нажатии на кнопку "Уведомления"
-        },
+        style: CupertinoTheme.of(context).textTheme.textStyle.copyWith(
+          fontSize: 24,
+          fontWeight: FontWeight.bold
+        ),
       ),
     );
   }

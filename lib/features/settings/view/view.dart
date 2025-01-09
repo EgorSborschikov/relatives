@@ -1,0 +1,1 @@
+export 'package:relatives/features/settings/view/settings_page.dart';

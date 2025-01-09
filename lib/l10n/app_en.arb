@@ -29,5 +29,17 @@
     "pleaseEnterPhoneNumber": "Please enter phone number",
     "pleaseEnterCountry": "Please enter country",
     "pleaseEnterRegion": "Please enter region",
-    "pleaseEnterCity": "Please enter city"
+    "pleaseEnterCity": "Please enter city",
+    "error":"Error",
+    "filePathSelectionRequired":"File Path Selection Required",
+    "ok":"Ok",
+    "contactAddedSuccessfully":"Contact Added Successfully",
+    "success":"Success",
+    "contactDetails":"Contact detail",
+    "personalInformation":"Personal",
+    "locationInformation":"Location",
+    "additionalInformation":"Additional",
+    "errorLoadingContacts":"Error Loading Contacts",
+    "noContactsAvailable":"No Contacts Available",
+    "myContacts":"My contacts"
 }  
